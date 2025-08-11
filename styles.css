@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans";
+}
+
+/* Navbar */
+.header {
+    background: transparent;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100vw;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* On scroll */
+.header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header.scrolled .nav-links a,
+.header.scrolled .logo,
+.header.scrolled .btn-secondary {
+    color: #000000;
+}
+
+.header.scrolled .btn-primary {
+    background: #95bf47;
+    color: white;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #eee5e5;
+}
+
+.btn-primary {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+/* Hero */
+.hero {
+    background-image: url('./bg.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    padding: 7rem 5rem;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 450px;
+}
+
+.cta-button {
+    background: white;
+    color: #000000;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Sections */
+.section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Features grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.feature-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Stats */
+.stats {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #95bf47;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Testimonial */
+.testimonial {
+    background: #95bf47;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.testimonial blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    padding: 3rem 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    color: #95bf47;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    text-align: center;
+    color: #ccc;
+}
+
+/* Animation for sections */
+.section, .hero, .stats, .testimonial {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.show, .hero.show, .stats.show, .testimonial.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Default (light mode) colors are already in your CSS above */
+
+/* ===== DARK MODE ===== */
+body.dark-mode {
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+body.dark-mode .header {
+    background-color: rgba(18, 18, 18, 0.95);
+}
+
+body.dark-mode .nav-links a,
+body.dark-mode .logo,
+body.dark-mode .btn-secondary {
+    color: #f5f5f5;
+}
+
+body.dark-mode .btn-primary {
+    background: #95bf47;
+    color: #fff;
+}
+
+body.dark-mode .section,
+body.dark-mode .stats,
+body.dark-mode .testimonial,
+body.dark-mode .feature-card {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+}
+
+body.dark-mode .stats {
+    background: #1a1a1a;
+}
+
+body.dark-mode .stat-label {
+    color: #aaa;
+}
+
+body.dark-mode .footer {
+    background-color: #0d0d0d;
+}
+
+body.dark-mode .footer-section ul li a {
+    color: #aaa;
+}
+
+body.dark-mode .footer-section ul li a:hover {
+    color: #fff;
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .section h2 {
+        font-size: 2rem;
+    }
+}
