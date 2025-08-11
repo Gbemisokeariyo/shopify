@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify - Be the next big thing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+           background: transparent;
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            width: 100vw;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #eee5e5;
+            font-weight: 1000px;
+            font-size: bold;
+        
+        }
+
+        .btn-primary {
+            background: #ffffff;
+            color: rgb(0, 0, 0);
+        }
+
+
+        .p {
+            font-family: 'Comic Sans MS', Arial, sans-serif;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            /* margin-right: 700px; */
+            white-space: nowrap;
+            
+        }
+
+        .image {
+            color: white;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+            margin: 0;
+            overflow: hidden;
+            max-width: 100vw;
+            max-height: 100vh;
+            align-items: left;
+        }
+        
+
+
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            /* margin-right: 700px; */
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 450px;
+            /* margin-left: auto; */
+            /* margin-right: 700px; */
+            /* display: inline-flex; */
+            
+          
+        }
+
+        .cta-button {
+            background: white;
+            color: #000000;
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            max-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-right: 790px;
+            margin-bottom: 600px;
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .feature-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .stats {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #95bf47;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .testimonial {
+            background: #95bf47;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .testimonial blockquote {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #95bf47;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                color: #000000;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">Shopify</div>
+            <ul class="nav-links">
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Enterprise</a></li>
+                <li><a href="#">What's new</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#" class="btn btn-secondary">Log in</a>
+                <a href="#" class="btn btn-primary">Start for free</a>
+            </div>
+        </nav>
+    </header>
+    <img class="image" src="pic.jpg" alt="">
+
+    <section class="hero">
+        <h1>Be the next<br><span style="font-weight: 300;">big thing</span></h1>
+        <h2>store they line up for</h2>
+        <p>Dream big, build fast, and grow far on Shopify.</p>
+        <a href="#" class="cta-button">Start for free</a>
+    </section>
+
+
+
+    <section class="section">
+        <h2>The one commerce platform behind it all</h2>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem;">
+            Sell online and in person. Sell locally and globally. Sell direct and wholesale. Sell on desktop and mobile.
+        </p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="https://via.placeholder.com/300x200/95bf47/white?text=Glossier" alt="Glossier">
+                <h3>glossier.com</h3>
+            </div>
+            <div class="feature-card">
+                <img src="https://via.placeholder.com/300x200/95bf47/white?text=The+Sill" alt="The Sill">
+                <h3>thesill.com</h3>
+            </div>
+            <div class="feature-card">
+                <img src="https://via.placeholder.com/300x200/95bf47/white?text=Vacation+Inc" alt="Vacation Inc">
+                <h3>vacation.inc</h3>
+            </div>
+            <div class="feature-card">
+                <img src="https://via.placeholder.com/300x200/95bf47/white?text=Aura+Bora" alt="Aura Bora">
+                <h3>aurabora.com</h3>
+            </div>
+            <div class="feature-card">
+                <img src="https://via.placeholder.com/300x200/95bf47/white?text=Kit+and+Ace" alt="Kit and Ace">
+                <h3>kitandace.com</h3>
+            </div>
+            <div class="feature-card">
+                <img src="https://via.placeholder.com/300x200/95bf47/white?text=Super+Smalls" alt="Super Smalls">
+                <h3>supersmalls.com</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>For everyone from entrepreneurs to enterprise</h2>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem;">
+            Millions of merchants of every size have collectively made over $1,000,000,000,000 in sales on Shopify.
+        </p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Get started fast</h3>
+                <p>Solo seller Megan Bre Camp started <strong>Summer Solace Tallow</strong> to sell her organic candles and skincare online and at local farmers markets.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Grow as big as you want</h3>
+                <p>Athleisure brand <strong>Gymshark</strong> grew from working out of a garage to the global juggernaut it is today, with $500M+ sales annually.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Raise the bar</h3>
+                <p>With the help of Shopify for enterprise, <strong>Mattel</strong> sells their iconic toys direct to customers around the world.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">15%</div>
+                <div class="stat-label">Higher conversions</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">150M+</div>
+                <div class="stat-label">High-intent shoppers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50ms</div>
+                <div class="stat-label">Response time</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4000+</div>
+                <div class="stat-label">World-class developers</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <blockquote>
+            "Shopify Capital has given us the funding we need to stock up on inventory and grow rapidly."
+        </blockquote>
+        <div class="testimonial-author">Jessica Wise<br>CEO, Hell Babes</div>
+    </section>
+
+    <section class="section">
+        <h2>Start selling in no time</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>01</h3>
+                <h4>Add your first product</h4>
+                <p>Upload your products and set up your inventory in minutes.</p>
+            </div>
+            <div class="feature-card">
+                <h3>02</h3>
+                <h4>Customize your store</h4>
+                <p>Choose from beautiful themes and customize your store's look and feel.</p>
+            </div>
+            <div class="feature-card">
+                <h3>03</h3>
+                <h4>Set up payments</h4>
+                <p>Accept payments from customers around the world with secure checkout.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="#" class="cta-button">Take your shot</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Shopify</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="#">Press and Media</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">Service status</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Merchant Support</a></li>
+                    <li><a href="#">Shopify Help Center</a></li>
+                    <li><a href="#">Hire a Partner</a></li>
+                    <li><a href="#">Shopify Academy</a></li>
+                    <li><a href="#">Shopify Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Developers</h4>
+                <ul>
+                    <li><a href="#">Shopify.dev</a></li>
+                    <li><a href="#">API Documentation</a></li>
+                    <li><a href="#">Dev Degree</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Shop Pay</a></li>
+                    <li><a href="#">Shopify Plus</a></li>
+                    <li><a href="#">Shopify Fulfillment Network</a></li>
+                    <li><a href="#">Shopify for Enterprise</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Shopify. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
